@@ -1,16 +1,19 @@
-import React from 'react';
+// import React from 'react';
 import { Outlet } from 'react-router-dom';
 import NavPanel from './NavPanel';
+import { Provider } from 'react-redux';
+import store from '../store/store';
 
 const RootLayout = () => {
   return (
-    <div>
+    <>
+    <Provider store={store}>
         < NavPanel/>
         <main>
             <Outlet/>
         </main>
-      
-    </div>
+    </Provider>
+    </>
   )
 }
 
